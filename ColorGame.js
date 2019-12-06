@@ -30,9 +30,7 @@ function pickColor(){
   return colors[random];
 }
 function generateRandomColors(num) {
-  //make an array
-  //add num random colors to array
-  // return that array
+ 
   var arr=[];
   for(var i=0; i<num;i++){
     arr.push(randomColor())
@@ -66,22 +64,35 @@ function randomColor(){
 function setupmodeButtons(){
   for( var i =0 ; i < modeButtons.length; i++){
     modeButtons[i].addEventListener("click", function(){
-      modeButtons[0].classList.remove("selected");
-      modeButtons[1].classList.remove("selected");
-      modeButtons[2].classList.remove("selected");
-      modeButtons[3].classList.remove("selected");
+     
       this.classList.add("selected");
       if(this.textContent ==="Easy"){
       	numSquares = 3;
+      	modeButtons[0].classList.add("selected");
+      modeButtons[1].classList.remove("selected");
+      modeButtons[2].classList.remove("selected");
+      modeButtons[3].classList.remove("selected");
       }
       else if(this.textContent ==="Hard"){
+      	modeButtons[0].classList.remove("selected");
+      modeButtons[1].classList.add("selected");
+      modeButtons[2].classList.remove("selected");
+      modeButtons[3].classList.remove("selected");
       	numSquares = 6;
       }
       else if(this.textContent === "Very Hard"){
+      	modeButtons[0].classList.remove("selected");
+      modeButtons[1].classList.remove("selected");
+      modeButtons[2].classList.add("selected");
+      modeButtons[3].classList.remove("selected");
       	numSquares = 9;
       }
       else{
       	numSquares =12;
+      	modeButtons[0].classList.remove("selected");
+      modeButtons[1].classList.remove("selected");
+      modeButtons[2].classList.remove("selected");
+      modeButtons[3].classList.add("selected");
       }
       reset();
     } );
